@@ -8,20 +8,17 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { TopPageModel } from './top_page/top_page.model';
-import { FindTopPageDTO } from './dto/find_top_page.dto';
+import { TopPageDTO } from './dto/top_page.dto';
 
 @Controller('top-page')
 export class TopPageController {
   @Post('create')
-  async createTopPage(
-    @Body() dto: Omit<TopPageModel, '_id'>,
-  ): Promise<Omit<TopPageModel, '_id'>> {
+  async createTopPage(@Body() dto: TopPageDTO): Promise<any> {
     return null;
   }
 
   @Get()
-  async getTopPage(): Promise<TopPageModel> {
+  async getTopPage(): Promise<any> {
     return null;
   }
 
@@ -33,8 +30,8 @@ export class TopPageController {
   @Put(':id')
   async updateTopPage(
     @Param('id') id: string,
-    @Body() dto: TopPageModel,
-  ): Promise<TopPageModel> {
+    @Body() dto: TopPageDTO,
+  ): Promise<any> {
     return null;
   }
 
@@ -45,7 +42,7 @@ export class TopPageController {
 
   @HttpCode(200)
   @Post()
-  async findTopPage(@Body() dto: FindTopPageDTO): Promise<FindTopPageDTO> {
+  async findTopPage(@Body() dto: TopPageDTO): Promise<any> {
     return null;
   }
 }
